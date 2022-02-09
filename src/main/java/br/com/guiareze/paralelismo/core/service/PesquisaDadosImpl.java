@@ -85,7 +85,7 @@ public class PesquisaDadosImpl implements PesquisaDados {
         System.out.println("Inicio processamento info enderecos.." + LocalDateTime.now().toString());
 
         try{
-            Thread.sleep(2000);
+            Thread.sleep(7000);
         } catch (Exception e){
             System.out.println("Error");
         }
