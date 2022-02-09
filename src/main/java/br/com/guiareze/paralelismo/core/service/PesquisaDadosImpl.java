@@ -8,7 +8,6 @@ import br.com.guiareze.paralelismo.core.ports.controller.PesquisaDados;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
-import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
@@ -54,18 +53,45 @@ public class PesquisaDadosImpl implements PesquisaDados {
     }
 
     private RetornoInfoPessoais retornaInfoPessoais(){
+
         System.out.println("Inicio processamento info pessoais.." + LocalDateTime.now().toString());
+
+        try{
+            Thread.sleep(10000);
+        } catch (Exception e){
+            System.out.println("Error");
+        }
+
         return new RetornoInfoPessoais("TESTE GUI",26);
+
     }
 
     private RetornoInfoCorporais retornoInfoCorporais(){
+
         System.out.println("Inicio processamento info corporais.." + LocalDateTime.now().toString());
+
+        try{
+            Thread.sleep(5000);
+        } catch (Exception e){
+            System.out.println("Error");
+        }
+
         return new RetornoInfoCorporais(new BigDecimal("1.86"), new BigDecimal("113.6"));
+
     }
 
     private RetornoInfoEndereco retornoInfoEndereco(){
+
         System.out.println("Inicio processamento info enderecos.." + LocalDateTime.now().toString());
+
+        try{
+            Thread.sleep(2000);
+        } catch (Exception e){
+            System.out.println("Error");
+        }
+
         return new RetornoInfoEndereco("Rua Teste", "bloco x apto w");
+
     }
 
 }
